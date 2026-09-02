@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diwali 2026 — Indian Spirit Regensburg</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Karla:ital,wght@0,400;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B1035;        /* deep festival night */
+    --ink-soft:#2A1A4E;
+    --marigold:#FFB300;   /* garland */
+    --saffron:#FF6A1F;    /* flame */
+    --magenta:#D6246E;    /* rangoli powder */
+    --teal:#0FA3A3;       /* peacock */
+    --cream:#FFF6E6;      /* diya glow */
+    --line:rgba(255,246,230,.22);
+    --display:"Yeseva One", Georgia, serif;
+    --body:"Karla", system-ui, sans-serif;
+    --mono:"Space Mono", ui-monospace, monospace;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--ink); color:var(--cream);
+    font-family:var(--body); font-size:16px; line-height:1.6;
+    background-image:
+      radial-gradient(900px 500px at 12% -10%, rgba(214,36,110,.35), transparent 60%),
+      radial-gradient(700px 460px at 92% 4%, rgba(255,179,0,.22), transparent 62%),
+      radial-gradient(760px 520px at 50% 108%, rgba(15,163,163,.22), transparent 60%);
+    background-attachment:fixed;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px 72px}
+
+  /* ---------- Signature: rangoli hero ---------- */
+  .hero{position:relative;padding:64px 0 40px;text-align:center;overflow:hidden}
+  .rangoli{width:min(340px,72vw);height:min(340px,72vw);margin:0 auto -70px;display:block}
+  .rangoli .spin{transform-origin:200px 200px;animation:spin 60s linear infinite}
+  .rangoli .spin-r{transform-origin:200px 200px;animation:spin 44s linear infinite reverse}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .flame{transform-origin:200px 214px;animation:flick 2.4s ease-in-out infinite}
+  @keyframes flick{0%,100%{transform:scale(1) translateY(0);opacity:.95}50%{transform:scale(1.14) translateY(-3px);opacity:1}}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--marigold)}
+  h1{font-family:var(--display);font-weight:400;font-size:clamp(42px,9vw,84px);line-height:.98;margin:14px 0 6px;
+     background:linear-gradient(96deg,var(--marigold),#FFE6A3 35%,var(--saffron) 62%,var(--magenta));
+     -webkit-background-clip:text;background-clip:text;color:transparent}
+  .tag{font-size:clamp(16px,2.4vw,20px);color:#F3E4D2;max-width:36ch;margin:8px auto 0}
+
+  /* ---------- Fact strip ---------- */
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+        border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:34px}
+  .fact{background:rgba(27,16,53,.72);padding:18px 16px}
+  .fact dt{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+  .fact dd{margin:6px 0 0;font-size:17px;font-weight:700}
+  .fact dd small{display:block;font-weight:400;font-size:13.5px;opacity:.75}
+  @media(max-width:640px){.facts{grid-template-columns:1fr}}
+
+  /* ---------- Sections ---------- */
+  section{margin-top:52px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
+  .sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(24px,4vw,34px);margin:0}
+  .sec-head .dot{width:10px;height:10px;border-radius:50%;background:var(--saffron);flex:none;box-shadow:0 0 0 5px rgba(255,106,31,.18)}
+
+  /* ---------- Price cards ---------- */
+  .prices{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px}
+  .price{border:1px solid var(--line);border-radius:16px;padding:18px;background:rgba(42,26,78,.5);position:relative}
+  .price.hot{border-color:var(--marigold);background:linear-gradient(180deg,rgba(255,179,0,.14),rgba(42,26,78,.5))}
+  .price .amt{font-family:var(--display);font-size:40px;line-height:1;color:var(--marigold)}
+  .price h3{margin:0 0 8px;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  .price p{margin:8px 0 0;font-size:14px;opacity:.8}
+  .badge{position:absolute;top:-11px;right:14px;background:var(--magenta);color:#fff;font-family:var(--mono);
+         font-size:10.5px;letter-spacing:.16em;padding:4px 10px;border-radius:99px;text-transform:uppercase}
+
+  /* ---------- Form ---------- */
+  form{border:1px solid var(--line);border-radius:22px;background:rgba(20,12,40,.68);padding:26px}
+  .field{margin-bottom:20px}
+  label{display:block;font-weight:700;font-size:14.5px;margin-bottom:6px}
+  label .req{color:var(--saffron)}
+  .hint{font-size:13px;opacity:.68;margin:0 0 8px}
+  input[type=text],input[type=email],input[type=tel],input[type=number],input[type=file],select,textarea{
+    width:100%;padding:12px 14px;border-radius:12px;border:1px solid var(--line);
+    background:rgba(255,246,230,.06);color:var(--cream);font:inherit}
+  input::placeholder{color:rgba(255,246,230,.42)}
+  input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,a:focus-visible{
+    outline:3px solid var(--marigold);outline-offset:2px}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:640px){.row{grid-template-columns:1fr}}
+  fieldset{border:1px dashed var(--line);border-radius:14px;padding:14px 16px;margin:0 0 20px}
+  legend{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);padding:0 6px}
+  .radio{display:flex;gap:10px;align-items:flex-start;margin:8px 0}
+  .radio input,.check input{margin-top:5px;accent-color:var(--magenta);flex:none}
+  .check{display:flex;gap:10px;align-items:flex-start;font-size:14.5px}
+
+  /* ---------- Total ---------- */
+  .total{border-radius:16px;padding:18px;margin:6px 0 22px;
+    background:linear-gradient(120deg,rgba(214,36,110,.28),rgba(255,179,0,.2));border:1px solid rgba(255,179,0,.45)}
+  .total .line{display:flex;justify-content:space-between;font-size:14.5px;padding:3px 0;opacity:.9}
+  .total .grand{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px;
+    padding-top:10px;border-top:1px solid rgba(255,246,230,.25)}
+  .total .grand span:first-child{font-weight:700}
+  .total .grand span:last-child{font-family:var(--display);font-size:34px;color:var(--marigold)}
+
+  /* ---------- Bank ---------- */
+  .bank{border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .bank div{display:flex;justify-content:space-between;gap:12px;padding:11px 16px;border-bottom:1px solid var(--line);font-size:14.5px}
+  .bank div:last-child{border-bottom:0}
+  .bank dt{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);align-self:center}
+  .bank dd{margin:0;font-family:var(--mono);font-weight:700;text-align:right;word-break:break-all}
+  .copy{margin-top:12px;background:transparent;border:1px solid var(--marigold);color:var(--marigold);
+    font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:10px 16px;border-radius:99px;cursor:pointer}
+  .copy:hover{background:var(--marigold);color:var(--ink)}
+
+  /* ---------- Closed / greyed-out states ---------- */
+  .price.closed{opacity:.42;filter:grayscale(1);border-color:rgba(255,246,230,.18);background:rgba(42,26,78,.35)}
+  .price.closed .amt{color:#B9B3A8;text-decoration:line-through}
+  .price.closed .badge{background:#6B6459}
+  .closed-tag{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:#CFC7B8;border:1px solid rgba(255,246,230,.3);
+    padding:3px 9px;border-radius:99px}
+  .radio.closed{opacity:.45;filter:grayscale(1)}
+  .radio.closed label{text-decoration:line-through}
+  .radio.closed input{cursor:not-allowed}
+  .radio .closed-note{display:block;font-size:12px;letter-spacing:.02em;text-decoration:none;opacity:.85;margin-top:2px}
+
+  .note{border-left:3px solid var(--saffron);padding:10px 0 10px 14px;font-size:14.5px;margin:18px 0}
+  button.submit{width:100%;padding:17px;border:0;border-radius:14px;cursor:pointer;
+    font-family:var(--display);font-size:20px;color:#2A0E00;
+    background:linear-gradient(96deg,var(--marigold),var(--saffron) 60%,var(--magenta));
+    box-shadow:0 10px 30px rgba(255,106,31,.28)}
+  button.submit:hover{filter:brightness(1.07)}
+button.submit:disabled{opacity:.65;cursor:wait;filter:none}
+  .msg{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-size:14.5px;border:1px solid}
+  .msg.err{display:block;border-color:var(--magenta);background:rgba(214,36,110,.14)}
+  .msg.wait{display:block;border-color:var(--marigold);background:rgba(255,179,0,.12)}
+  .out{display:none;margin-top:18px;padding:18px;border-radius:14px;border:1px solid var(--teal);background:rgba(15,163,163,.12)}
+  .out h3{margin:0 0 8px;font-family:var(--display);font-weight:400;font-size:22px;color:var(--marigold)}
+  .out pre{white-space:pre-wrap;font-family:var(--mono);font-size:13px;margin:0}
+  footer{margin-top:56px;text-align:center;font-size:14px;opacity:.72}
+  a{color:var(--marigold)}
+  @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <svg class="rangoli" viewBox="0 0 400 400" role="img" aria-label="Rangoli pattern with a lit diya at the centre">
+      <g class="spin" fill="none" stroke="#D6246E" stroke-width="1.4" opacity=".75">
+        <circle cx="200" cy="200" r="172"/>
+        <g id="p1">
+          <path d="M200 30 C240 92, 240 112, 200 150 C160 112, 160 92, 200 30Z"/>
+        </g>
+        <use href="#p1" transform="rotate(45 200 200)"/><use href="#p1" transform="rotate(90 200 200)"/>
+        <use href="#p1" transform="rotate(135 200 200)"/><use href="#p1" transform="rotate(180 200 200)"/>
+        <use href="#p1" transform="rotate(225 200 200)"/><use href="#p1" transform="rotate(270 200 200)"/>
+        <use href="#p1" transform="rotate(315 200 200)"/>
+      </g>
+      <g class="spin-r" fill="none" stroke="#FFB300" stroke-width="1.2" opacity=".85">
+        <circle cx="200" cy="200" r="128" stroke-dasharray="3 9"/>
+        <g id="p2"><circle cx="200" cy="96" r="7" fill="#0FA3A3" stroke="none"/></g>
+        <use href="#p2" transform="rotate(30 200 200)"/><use href="#p2" transform="rotate(60 200 200)"/>
+        <use href="#p2" transform="rotate(90 200 200)"/><use href="#p2" transform="rotate(120 200 200)"/>
+        <use href="#p2" transform="rotate(150 200 200)"/><use href="#p2" transform="rotate(180 200 200)"/>
+        <use href="#p2" transform="rotate(210 200 200)"/><use href="#p2" transform="rotate(240 200 200)"/>
+        <use href="#p2" transform="rotate(270 200 200)"/><use href="#p2" transform="rotate(300 200 200)"/>
+        <use href="#p2" transform="rotate(330 200 200)"/>
+      </g>
+      <path d="M154 232 q46 34 92 0 q-14 20 -46 20 q-32 0 -46 -20Z" fill="#FF6A1F"/>
+      <path class="flame" d="M200 176 c14 18 12 30 0 38 c-12 -8 -14 -20 0 -38Z" fill="#FFE6A3"/>
+      <circle cx="200" cy="214" r="52" fill="#FFB300" opacity=".14"/>
+    </svg>
+
+    <p class="eyebrow">Indian Spirit Regensburg presents</p>
+    <h1>Diwali 2026</h1>
+    <p class="tag">One afternoon of lamps, music, dance and food — with the whole Regensburg family. Shubh Deepavali!</p>
+
+    <dl class="facts">
+      <div class="fact"><dt>Date</dt><dd>Sunday, 15 November 2026<small>12:00 – 18:00</small></dd></div>
+      <div class="fact"><dt>Venue</dt><dd>Kurhaus Bad Abbach<small>Kaiser-Karl-V.-Allee 3, 93077</small></dd></div>
+      <div class="fact"><dt>Food</dt><dd>Festive stalls on site<small>Bought separately at the venue</small></dd></div>
+    </dl>
+  </header>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>What it costs</h2></div>
+    <div class="prices">
+      <div class="price hot" id="card-early"><span class="badge">Early bird</span><h3>Adult · limited</h3><div class="amt">€12</div><p>While early-bird tickets last.</p></div>
+      <div class="price" id="card-regular"><h3>Adult · regular</h3><div class="amt">€17</div><p>Ages 12 and above.</p></div>
+      <div class="price"><h3>Child · 6 to 12</h3><div class="amt">€10</div><p>Same seat, same sweets.</p></div>
+      <div class="price"><h3>Child · under 6</h3><div class="amt">Free</div><p>No ticket needed.</p></div>
+    </div>
+    <p class="note">The hall has a fixed capacity, so places go strictly in the order registrations and payments arrive. Booking early is the safest way in.</p>
+  </section>
+
+  <section>
+    <div class="sec-head"><span class="dot"></span><h2>Reserve your seats</h2></div>
+    <form id="reg" novalidate>
+
+      <div class="field">
+        <label for="name">Your full name <span class="req">*</span></label>
+        <input id="name" type="text" placeholder="First and last name" required>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="email">Email <span class="req">*</span></label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="phone">WhatsApp number <span class="req">*</span></label>
+          <p class="hint">For event updates and photos. Include the country code.</p>
+          <input id="phone" type="tel" placeholder="+491234567890" required>
+        </div>
+      </div>
+
+      <fieldset>
+        <legend>Who's coming</legend>
+        <div class="field">
+          <label>Ticket type for adults</label>
+          <div class="radio" id="row-early"><input type="radio" name="rate" id="r12" value="12" checked><label for="r12" style="font-weight:400">Early bird — €12 each</label></div>
+          <div class="radio" id="row-regular"><input type="radio" name="rate" id="r17" value="17"><label for="r17" style="font-weight:400">Regular — €17 each</label></div>
+        </div>
+        <div class="row">
+          <div class="field">
+            <label for="adults">Adults, ages 12+ <span class="req">*</span></label>
+            <input id="adults" type="number" min="0" max="20" value="1" required>
+          </div>
+          <div class="field">
+            <label for="kids">Children, ages 6–12</label>
+            <input id="kids" type="number" min="0" max="20" value="0">
+          </div>
+        </div>
+        <div class="field" style="margin-bottom:0">
+          <label for="tots">Children under 6 (free — for seating counts)</label>
+          <input id="tots" type="number" min="0" max="20" value="0">
+        </div>
+      </fieldset>
+
+      <div class="total" aria-live="polite">
+        <div class="line"><span id="l-adults">Adults</span><span id="v-adults">€12</span></div>
+        <div class="line"><span id="l-kids">Children 6–12</span><span id="v-kids">€0</span></div>
+        <div class="line"><span id="l-tots">Children under 6</span><span id="v-tots">Free</span></div>
+        <div class="grand"><span>Amount to transfer</span><span id="grand">€12</span></div>
+      </div>
+
+      <div class="field">
+        <label for="notes">Anything we should know?</label>
+        <p class="hint">Vegetarian or allergy notes, accessibility needs, or if you'd like to volunteer on the day.</p>
+        <textarea id="notes" rows="3" placeholder="Optional"></textarea>
+      </div>
+
+      <div class="sec-head" style="margin-top:26px"><span class="dot"></span><h2>Pay to confirm</h2></div>
+      <dl class="bank">
+        <div><dt>Bank</dt><dd>N26 Bank</dd></div>
+        <div><dt>Account holder</dt><dd>Ashok Ponnathapura Sethuram</dd></div>
+        <div><dt>IBAN</dt><dd id="iban">DE48 1001 1001 2627 8860 90</dd></div>
+        <div><dt>BIC</dt><dd>NTSBDEB1XXX</dd></div>
+        <div><dt>Reference</dt><dd id="ref">YourName_Diwali2026</dd></div>
+      </dl>
+      <button type="button" class="copy" id="copyBank">Copy bank details</button>
+
+      <div class="field" style="margin-top:22px">
+        <label for="proof">Upload your payment confirmation <span class="req">*</span></label>
+        <p class="hint">Screenshot or PDF, up to 10 MB.</p>
+        <input id="proof" type="file" accept=".pdf,image/*" required>
+      </div>
+
+      <p class="note">A place is held only when the form is submitted <em>and</em> the transfer has arrived. A payment on its own doesn't reserve a seat. Tickets can't be refunded or passed on to someone else.</p>
+
+      <div class="field">
+        <label class="check"><input type="checkbox" id="consent" required>
+          <span>I agree that my details may be used to organise this event and to send me updates about it. <span class="req">*</span></span></label>
+      </div>
+
+      <button class="submit" type="submit">Reserve my seats</button>
+      <div class="msg" id="msg" role="status" aria-live="polite"></div>
+      <div class="out" id="out"><h3>Here's your registration summary</h3><pre id="summary"></pre></div>
+    </form>
+  </section>
+
+  <footer>
+    Questions? Write to <a href="mailto:indianspiritrbg@gmail.com">indianspiritrbg@gmail.com</a><br>
+    Indian Spirit Regensburg · See you at the Kurhaus 🪔
+  </footer>
+</div>
+
+<script>
+  /* ============================================================
+     ORGANISER SWITCH — change true/false, save, re-upload.
+     Set earlyBird to false the moment early-bird tickets run out:
+     that price greys out and only €17 stays selectable.
+     ============================================================ */
+  const TICKETS = {
+    earlyBird: { open: true,  closedNote: "Sold out — early-bird tickets have closed" },
+    regular:   { open: false,  closedNote: "Not on sale yet — early bird is still running" }
+  };
+
+  const $ = id => document.getElementById(id);
+  const eur = n => "€" + n;
+
+  function applyTicketConfig(){
+    const rows = [
+      { cfg:TICKETS.earlyBird, row:'row-early',   card:'card-early',   input:'r12' },
+      { cfg:TICKETS.regular,   row:'row-regular', card:'card-regular', input:'r17' }
+    ];
+    rows.forEach(({cfg,row,card,input}) => {
+      const off = !cfg.open;
+      $(row).classList.toggle('closed', off);
+      $(card).classList.toggle('closed', off);
+      $(input).disabled = off;
+      $(row).querySelectorAll('.closed-note').forEach(n => n.remove());
+      $(card).querySelectorAll('.closed-tag').forEach(n => n.remove());
+      if(off){
+        const n = document.createElement('span');
+        n.className = 'closed-note'; n.textContent = cfg.closedNote;
+        $(row).querySelector('label').appendChild(n);
+        const t = document.createElement('span');
+        t.className = 'closed-tag'; t.textContent = cfg.closedNote;
+        $(card).appendChild(t);
+      }
+    });
+    // Keep a live option selected
+    const checked = document.querySelector('input[name=rate]:checked');
+    if(!checked || checked.disabled){
+      const live = [...document.querySelectorAll('input[name=rate]')].find(i => !i.disabled);
+      if(live) live.checked = true;
+    }
+  }
+
+  function rate(){
+    const el = document.querySelector('input[name=rate]:checked');
+    return el ? Number(el.value) : 0;
+  }
+  function calc(){
+    const a = Math.max(0, Number($('adults').value)||0);
+    const k = Math.max(0, Number($('kids').value)||0);
+    const t = Math.max(0, Number($('tots').value)||0);
+    const r = rate();
+    $('l-adults').textContent = `Adults × ${a} @ €${r}`;
+    $('v-adults').textContent = eur(a*r);
+    $('l-kids').textContent = `Children 6–12 × ${k} @ €10`;
+    $('v-kids').textContent = eur(k*10);
+    $('l-tots').textContent = `Children under 6 × ${t}`;
+    $('grand').textContent = eur(a*r + k*10);
+    return {a,k,t,r,total:a*r+k*10};
+  }
+  ['adults','kids','tots'].forEach(id => $(id).addEventListener('input', calc));
+  document.querySelectorAll('input[name=rate]').forEach(el => el.addEventListener('change', calc));
+  $('name').addEventListener('input', e => {
+    const n = e.target.value.trim().replace(/\s+/g,'');
+    $('ref').textContent = (n || 'YourName') + '_Diwali2026';
+  });
+  applyTicketConfig();
+  calc();
+
+  $('copyBank').addEventListener('click', async e => {
+    const text = `N26 Bank\nAshok Ponnathapura Sethuram\nIBAN: DE48100110012627886090\nBIC: NTSBDEB1XXX\nReference: ${$('ref').textContent}`;
+    try { await navigator.clipboard.writeText(text); e.target.textContent = 'Copied'; }
+    catch { e.target.textContent = 'Copy failed — select the details above'; }
+    setTimeout(()=>e.target.textContent='Copy bank details', 2200);
+  });
+
+  /* ============================================================
+     BACKEND SETTINGS
+     WEB_APP_URL   paste the /exec URL from your Apps Script deployment
+     SHARED_TOKEN  must match SHARED_TOKEN in Code.gs
+     ============================================================ */
+  const WEB_APP_URL  = "https://script.google.com/macros/s/AKfycbyMt8zYlv-5Np8jcZjfB5CInzZC5E92lNRNeP_DVFyQTpBBcgg1Qb3rMDU-WXjbLxoq/exec";
+  const SHARED_TOKEN = "ISR-DIWALI-2026-31aug26";
+
+  const msgBox = $('msg');
+  function showMsg(text, kind){
+    msgBox.className = 'msg ' + (kind || 'err');
+    msgBox.textContent = text;
+    msgBox.scrollIntoView({behavior:'smooth', block:'nearest'});
+  }
+  function clearMsg(){ msgBox.className = 'msg'; msgBox.textContent = ''; }
+
+  $('reg').addEventListener('submit', async ev => {
+    ev.preventDefault();
+    clearMsg();
+
+    const missing = [];
+    if(!$('name').value.trim()) missing.push('your full name');
+    if(!$('email').checkValidity() || !$('email').value.trim()) missing.push('a valid email');
+    if(!$('phone').value.trim()) missing.push('a WhatsApp number');
+    if(!$('adults').value || Number($('adults').value) < 0) missing.push('number of adults');
+    if(!$('proof').files.length) missing.push('the payment confirmation file');
+    if(!$('consent').checked) missing.push('the consent tick');
+
+    if(missing.length){
+      showMsg('Still needed: ' + missing.join(', ') + '.');
+      return;
+    }
+
+    const file = $('proof').files[0];
+    if(file.size > 10 * 1024 * 1024){
+      showMsg('The payment confirmation file must be 10 MB or smaller.');
+      return;
+    }
+
+    const c = calc();
+    const submitBtn = document.querySelector('button.submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+    showMsg('Uploading your payment confirmation and saving your registration…', 'wait');
+
+    try {
+      const fileData = await new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result || ''));
+        reader.onerror = () => reject(new Error('The file could not be read.'));
+        reader.readAsDataURL(file);
+      });
+
+      const payload = {
+        token: SHARED_TOKEN,
+        name: $('name').value.trim(),
+        email: $('email').value.trim(),
+        phone: $('phone').value.trim(),
+        adultRate: c.r,
+        adults: c.a,
+        kids: c.k,
+        tots: c.t,
+        total: c.total,
+        reference: $('ref').textContent.trim(),
+        notes: $('notes').value.trim(),
+        consent: $('consent').checked ? 'Yes' : 'No',
+        paymentFileBase64: fileData,
+        paymentFileName: file.name,
+        paymentFileMimeType: file.type || 'application/octet-stream'
+      };
+
+      // text/plain keeps this a simple CORS request, so no preflight is needed
+      // and the Apps Script response can actually be read.
+      const res = await fetch(WEB_APP_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+
+      if(!res.ok) throw new Error('Server responded with ' + res.status);
+
+      let result;
+      try { result = JSON.parse(await res.text()); }
+      catch { throw new Error('Unexpected response from the server.'); }
+
+      if(!result.ok){
+        showMsg(result.message || 'Your registration could not be saved. Please try again.');
+        return;
+      }
+
+      clearMsg();
+      $('summary').textContent =
+`Registration number: ${result.registrationId}
+Name: ${payload.name}
+Email: ${payload.email}
+WhatsApp: ${payload.phone}
+Adults (12+): ${payload.adults} @ €${payload.adultRate}
+Children 6–12: ${payload.kids} @ €10
+Children under 6: ${payload.tots} (free)
+Total to transfer: €${result.total}
+Reference: ${result.reference}
+Notes: ${payload.notes || '—'}
+
+Registration received. Your payment confirmation has been uploaded and is being verified.
+Tickets will be sent to ${payload.email} once the payment is confirmed.
+A confirmation email is on its way — please check your spam folder if you don't see it.`;
+
+      $('out').style.display = 'block';
+      $('out').scrollIntoView({behavior:'smooth', block:'nearest'});
+      $('reg').querySelectorAll('input,select,textarea').forEach(el => el.disabled = true);
+      submitBtn.textContent = 'Registration received';
+      return;
+
+    } catch(error) {
+      console.error('Submission error:', error);
+      showMsg('Your registration could not be sent (' + error.message + '). Please check your connection and try again, ' +
+              'or email indianspiritrbg@gmail.com with your details.');
+    } finally {
+      if(submitBtn.textContent === 'Submitting…'){
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+      }
+    }
+  });
+</script>
+</body>
+</html>
